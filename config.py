@@ -1,0 +1,40 @@
+# config.py
+
+# 데이터 관련 설정
+STOCK_UNIVERSE = ['INTL','AAPL', 'GOOGL', 'MSFT', 'SOXL', 'NVDA', 'TSLA', 'SPY', 'QQQS', 'TSLQ', 'TSLS', 'BITO'] # 다양한 종목 포함 (테스트용)
+TICKER = STOCK_UNIVERSE[0] if STOCK_UNIVERSE else "DEFAULT" 
+
+START_DATE = '2018-12-11' # 장기 백테스팅을 위해 2010년부터 시작
+END_DATE = '2024-05-20' 
+DATA_PATH = 'data/'
+CSV_FILENAME = "{TICKER}_{START_DATE}_to_{END_DATE}_new.csv"
+
+# 기술적 지표 파라미터
+EMA_SHORT_PERIOD = 20
+EMA_LONG_PERIOD = 60
+RSI_PERIOD = 21
+MACD_FAST_PERIOD = 12
+MACD_SLOW_PERIOD = 26
+MACD_SIGNAL_PERIOD = 9
+
+# 백테스팅 관련 설정
+INITIAL_CAPITAL = 100000.0 
+TRANSACTION_COST_PERCENT = 0.001 # 0.1% 수수료
+SLIPPAGE_PERCENT = 0.05 # 0.05% 슬리피지 (매수 시 +0.05%, 매도 시 -0.05% 가격 손실)
+
+MAX_ALLOCATION_PCT_OF_INITIAL_CAPITAL_PER_TRADE = 0.3 # 한 번에 초기 자본금의 10% 투자
+
+# 백테스팅 전략 상세 설정
+TAKE_PROFIT_PERCENT = 0.7  # 목표 수익률 7%
+STOP_LOSS_PERCENT = 0.1    # 손절매 3%
+MAX_HOLD_DAYS = 365        # 최대 보유 기간 1000 거래일 (사실상 무제한에 가깝게 설정)
+
+MAX_CONCURRENT_POSITIONS = 8 # 동시에 최대 2개 종목만 보유
+
+# 타겟 변수 계산을 위한 설정
+PREDICTION_HORIZON_DAYS = 20  
+TARGET_RISE_PERCENT = 0.10   
+
+# RSI 트렌드 확인 레벨 (전략에 사용)
+RSI_TREND_CONFIRM_LEVEL_BUY = 55
+RSI_TREND_CONFIRM_LEVEL_SELL = 45
