@@ -48,20 +48,25 @@
 ## 프로젝트 구조
 
 tradingBot/
-├── data/                     # 다운로드된 CSV 주가 데이터 저장 폴더
-├── ml_model/                 # 학습된 .pkl ML 모델 파일 저장 폴더
-├── backtest_logs/            # 백테스트 거래 기록 CSV 저장 폴더
-├── config.py                 # 데이터, 지표, 백테스팅 관련 설정 파일
-├── data_handler.py           # 데이터 수집, 전처리 및 지표 계산
-├── train_evaluate_ml.py      # ML 모델 학습 및 평가
-├── strategy.py               # 규칙 기반 트레이딩 전략 로직
-├── ml_strategy.py            # ML 기반 트레이딩 전략 로직 (학습된 모델 사용)
-├── backtester.py             # 핵심 백테스팅 엔진
-├── performance_analyzer.py   # 성과 지표 계산 및 시각화
-├── run_backtest.py           # 규칙 기반 전략 백테스트 실행 스크립트
-├── run_ml_backtest.py        # ML 전략 백테스트 실행 스크립트
-├── requirements.txt          # 파이썬 패키지 의존성 목록
-└── README.md                 # 본 파일 (프로젝트 설명)
+├── data/                    # 다운로드된 CSV 주가 데이터 저장
+├── ml_model/                # 학습된 .pkl ML 모델 파일 저장
+├── backtest_logs/           # 백테스트 거래 기록 CSV 저장
+│
+├── config.py                # 데이터, 지표, 백테스팅 관련 설정
+├── data_handler.py          # 데이터 수집, 전처리 및 지표 계산
+│
+├── train_evaluate_ml.py     # ML 모델 학습 및 평가
+├── strategy.py              # 규칙 기반 트레이딩 전략 로직
+├── ml_strategy.py           # ML 기반 트레이딩 전략 로직 (학습된 모델 사용)
+│
+├── backtester.py            # 핵심 백테스팅 엔진
+├── performance_analyzer.py  # 성과 지표 계산 및 시각화
+│
+├── run_backtest.py          # 규칙 기반 전략 백테스트 실행 스크립트
+├── run_ml_backtest.py       # ML 전략 백테스트 실행 스크립트
+│
+├── requirements.txt         # 파이썬 패키지 의존성 목록
+└── README.md                # 프로젝트 설명
 
 
 ## 설치 및 실행 방법
