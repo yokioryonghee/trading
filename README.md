@@ -124,7 +124,7 @@ tradingBot/
 * **샤프 지수:** [예: 2.27]
 * **총 거래 횟수:** [예: 6회]
 
-[demo]([https://github.com/user-attachments/assets/abcd1234](https://github.com/yokioryonghee/trading/issues/1#issue-3358349132))
+![demo]([https://github.com/user-attachments/assets/abcd1234](https://github.com/yokioryonghee/trading/issues/1#issue-3358349132))
 
 
 
