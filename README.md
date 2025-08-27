@@ -129,6 +129,9 @@ tradingBot/
 <img width="1710" height="1107" alt="Image" src="https://github.com/user-attachments/assets/3e3fb57a-7a42-4fb4-851a-7aa213701466" />
 
 
+<img width="1710" height="1107" alt="Image" src="https://github.com/user-attachments/assets/b0d1bac8-e962-4667-b3dc-f3b573400cbb" />
+
+
 
 ## 한계점 및 향후 개선 방향
 
