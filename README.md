@@ -82,7 +82,7 @@ tradingBot/
 
 1.  **저장소 복제 (해당되는 경우):**
     ```bash
-    git clone <저장소_URL>
+    git clone https://github.com/yokioryonghee/tradingBot
     cd tradingBot
     ```
 2.  **파이썬 가상 환경 생성 및 활성화:**
