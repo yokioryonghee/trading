@@ -133,11 +133,11 @@ tradingBot/
 예시:
 
 
-
+Riding the wave of the market hype
 
 <img width="1710" height="1107" alt="Image" src="https://github.com/user-attachments/assets/3e3fb57a-7a42-4fb4-851a-7aa213701466" />
 
-
+Turn your back on old friends when things get tough
 <img width="1710" height="1107" alt="Image" src="https://github.com/user-attachments/assets/b0d1bac8-e962-4667-b3dc-f3b573400cbb" />
 
 
