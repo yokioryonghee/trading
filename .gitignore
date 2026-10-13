@@ -5,3 +5,5 @@ __pycache__/
 artifacts/
 ml_model/
 data/
+*env/
+.env

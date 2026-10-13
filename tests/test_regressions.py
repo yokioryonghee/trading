@@ -36,7 +36,7 @@ def test_symbol_signal_isolation():
     b=a.copy(); b['Ticker']='B'; b['EMA_short']*=2
     expected=generate_signals(a)
     mixed=generate_signals(pd.concat([a,b]).sort_index())
-    pd.testing.assert_frame_equal(expected,mixed[mixed.Ticker=='A'])
+    pd.testing.assert_frame_equal(expected,mixed[mixed.Ticker=='A'],check_freq=False)
 
 def test_next_open_execution_and_final_fees():
     dates=pd.bdate_range('2024-01-01',periods=3,name='Date')
