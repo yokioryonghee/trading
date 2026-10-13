@@ -109,7 +109,8 @@ def main():
     # 6. 시각화 (performance_analyzer.py 사용은 동일)
     print("\n6. 결과 시각화 중...")
     benchmark_data = data_with_indicators_all_tickers[data_with_indicators_all_tickers['Ticker'] == display_ticker].copy() #
-    plot_performance(portfolio_df, benchmark_data, f"{display_ticker} (ML Strategy)") #
+    figure=plot_performance(portfolio_df, benchmark_data, f"{display_ticker} (ML Strategy)")
+    figure.savefig("backtest.png",dpi=150,bbox_inches="tight") #
     print(f"--- ML 모델 기반 백테스팅 종료 ---")
 
 if __name__ == '__main__':

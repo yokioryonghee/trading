@@ -77,3 +77,22 @@ def test_download_failure_visible(monkeypatch):
     import data_handler
     monkeypatch.setattr(data_handler.yf,'download',lambda *a,**k:pd.DataFrame())
     with pytest.raises(ValueError,match='A: No market data'): data_handler.get_prepared_data(['A'])
+
+
+def test_cli_pipeline_uses_untouched_dates(monkeypatch,tmp_path):
+    import runpy,config,data_handler
+    from train_evaluate_ml import main as train_main
+    from ml_strategy import generate_signals_from_ml
+    root=Path(__file__).parents[1]
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(config,'STOCK_UNIVERSE',['A'])
+    monkeypatch.setattr(config,'PREDICTION_HORIZON_DAYS',5)
+    monkeypatch.setattr(config,'TARGET_RISE_PERCENT',.01)
+    monkeypatch.setattr(data_handler.yf,'download',lambda *a,**k:bars(650))
+    train_main()
+    full=data_handler.get_prepared_data(['A'])
+    signals=generate_signals_from_ml(full,'ml_model')
+    assert len(signals)>30
+    if (root/'run_ml_backtest.py').exists():
+        runpy.run_path(str(root/'run_ml_backtest.py'),run_name='__main__')
+        assert (tmp_path/'backtest.png').is_file()

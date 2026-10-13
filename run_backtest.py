@@ -106,7 +106,8 @@ def main():
     # data_with_indicators_all_tickers에서 display_ticker에 해당하는 데이터만 필터링
     benchmark_data = data_with_indicators_all_tickers[data_with_indicators_all_tickers['Ticker'] == display_ticker].copy()
     
-    plot_performance(portfolio_df, benchmark_data, display_ticker)
+    figure=plot_performance(portfolio_df, benchmark_data, display_ticker)
+    figure.savefig("backtest.png",dpi=150,bbox_inches="tight")
     print(f"--- {display_ticker} 외 {len(STOCK_UNIVERSE)-1}개 주식에 대한 백테스팅 종료 ---")
 
 if __name__ == '__main__':
