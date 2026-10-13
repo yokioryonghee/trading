@@ -1,7 +1,7 @@
 # config.py
 
 # 데이터 관련 설정
-STOCK_UNIVERSE = ['INTL','AAPL', 'GOOGL', 'MSFT', 'SOXL', 'NVDA', 'TSLA', 'SPY', 'QQQS', 'TSLQ', 'TSLS', 'BITO'] # 다양한 종목 포함 (테스트용)
+STOCK_UNIVERSE = ['INTC','AAPL', 'GOOGL', 'MSFT', 'SOXL', 'NVDA', 'TSLA', 'SPY', 'QQQS', 'TSLQ', 'TSLS', 'BITO'] # 다양한 종목 포함 (테스트용)
 TICKER = STOCK_UNIVERSE[0] if STOCK_UNIVERSE else "DEFAULT" 
 
 START_DATE = '2018-12-11' # 장기 백테스팅을 위해 2010년부터 시작
@@ -20,13 +20,13 @@ MACD_SIGNAL_PERIOD = 9
 # 백테스팅 관련 설정
 INITIAL_CAPITAL = 100000.0 
 TRANSACTION_COST_PERCENT = 0.001 # 0.1% 수수료
-SLIPPAGE_PERCENT = 0.05 # 0.05% 슬리피지 (매수 시 +0.05%, 매도 시 -0.05% 가격 손실)
+SLIPPAGE_PERCENT = 0.0005 # 0.05% 슬리피지 (매수 시 +0.05%, 매도 시 -0.05% 가격 손실)
 
 MAX_ALLOCATION_PCT_OF_INITIAL_CAPITAL_PER_TRADE = 0.3 # 한 번에 초기 자본금의 10% 투자
 
 # 백테스팅 전략 상세 설정
-TAKE_PROFIT_PERCENT = 0.7  # 목표 수익률 7%
-STOP_LOSS_PERCENT = 0.1    # 손절매 3%
+TAKE_PROFIT_PERCENT = 0.07  # 목표 수익률 7%
+STOP_LOSS_PERCENT = 0.03    # 손절매 3%
 MAX_HOLD_DAYS = 365        # 최대 보유 기간 1000 거래일 (사실상 무제한에 가깝게 설정)
 
 MAX_CONCURRENT_POSITIONS = 8 # 동시에 최대 2개 종목만 보유

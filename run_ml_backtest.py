@@ -58,7 +58,7 @@ def main():
     data_for_backtest_full.set_index('Date', inplace=True)
     data_for_backtest_full.sort_index(inplace=True)
 
-    required_cols = ['CLOSE', 'VOLUME', 'volume_change_pct', 'Ticker', 'signal'] #
+    required_cols = ['OPEN', 'CLOSE', 'VOLUME', 'volume_change_pct', 'Ticker', 'signal'] #
     missing_cols = [col for col in required_cols if col not in data_for_backtest_full.columns]
     if missing_cols:
         print(f"오류: ML 백테스팅에 필요한 컬럼이 누락되었습니다: {missing_cols}. data_handler.py 또는 데이터 통합 로직을 확인하세요.")
