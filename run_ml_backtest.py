@@ -58,7 +58,7 @@ def main():
     data_for_backtest_full.set_index('Date', inplace=True)
     data_for_backtest_full.sort_index(inplace=True)
 
-    required_cols = ['CLOSE', 'VOLUME', 'volume_change_pct', 'Ticker', 'signal'] #
+    required_cols = ['OPEN', 'CLOSE', 'VOLUME', 'volume_change_pct', 'Ticker', 'signal'] #
     missing_cols = [col for col in required_cols if col not in data_for_backtest_full.columns]
     if missing_cols:
         print(f"오류: ML 백테스팅에 필요한 컬럼이 누락되었습니다: {missing_cols}. data_handler.py 또는 데이터 통합 로직을 확인하세요.")
@@ -109,7 +109,8 @@ def main():
     # 6. 시각화 (performance_analyzer.py 사용은 동일)
     print("\n6. 결과 시각화 중...")
     benchmark_data = data_with_indicators_all_tickers[data_with_indicators_all_tickers['Ticker'] == display_ticker].copy() #
-    plot_performance(portfolio_df, benchmark_data, f"{display_ticker} (ML Strategy)") #
+    figure=plot_performance(portfolio_df, benchmark_data, f"{display_ticker} (ML Strategy)")
+    figure.savefig("backtest.png",dpi=150,bbox_inches="tight") #
     print(f"--- ML 모델 기반 백테스팅 종료 ---")
 
 if __name__ == '__main__':

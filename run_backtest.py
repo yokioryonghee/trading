@@ -55,7 +55,7 @@ def main():
     data_for_backtest_full.sort_index(inplace=True)
 
     # 백테스터에 필요한 최종 컬럼들: CLOSE, VOLUME, volume_change_pct, Ticker, signal
-    required_cols = ['CLOSE', 'VOLUME', 'volume_change_pct', 'Ticker', 'signal']
+    required_cols = ['OPEN', 'CLOSE', 'VOLUME', 'volume_change_pct', 'Ticker', 'signal']
     missing_cols = [col for col in required_cols if col not in data_for_backtest_full.columns]
     if missing_cols:
         print(f"오류: 백테스팅에 필요한 컬럼이 누락되었습니다: {missing_cols}. data_handler.py 확인.")
@@ -106,7 +106,8 @@ def main():
     # data_with_indicators_all_tickers에서 display_ticker에 해당하는 데이터만 필터링
     benchmark_data = data_with_indicators_all_tickers[data_with_indicators_all_tickers['Ticker'] == display_ticker].copy()
     
-    plot_performance(portfolio_df, benchmark_data, display_ticker)
+    figure=plot_performance(portfolio_df, benchmark_data, display_ticker)
+    figure.savefig("backtest.png",dpi=150,bbox_inches="tight")
     print(f"--- {display_ticker} 외 {len(STOCK_UNIVERSE)-1}개 주식에 대한 백테스팅 종료 ---")
 
 if __name__ == '__main__':
